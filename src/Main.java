@@ -1,7 +1,4 @@
-import java.nio.charset.Charset;
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Main {
     public static void main(String[] args) {
@@ -59,7 +56,7 @@ public class Main {
                     }
                 }
             }
-            var all = new All();
+            var all = new ALLInformation();
             count++;
             all.setGuess(guess);
             all.setNr(count);

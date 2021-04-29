@@ -1,4 +1,4 @@
-public class All {
+public class ALLInformation {
 
     private int nr ;
 
