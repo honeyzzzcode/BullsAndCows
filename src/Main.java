@@ -5,9 +5,12 @@ import java.util.stream.IntStream;
 
 public class Main {
     public static void main(String[] args) {
-        boolean running = true;
-        int count = 0;
+
         Scanner scanner = new Scanner(System.in);
+
+
+        int count = 0;
+
         List<Integer> myNumbers;
         var rand = new Random();
         var set = new LinkedHashSet<Integer>();
@@ -18,13 +21,22 @@ public class Main {
         myNumbers = List.copyOf(set);
         System.out.println(myNumbers);
 
-        System.out.println("Welcome to bulls and cows game ! " );
-        do {
-            System.out.println("Try to guess the number:");
+        System.out.println("Welcome to bulls and cows game ! \n" +
+                " There is  a 4-digit secret number. The digits are all different.\n " +
+                "Then the players try to guess number.\n " +
+                "If the matching digits are in their right positions, they are \"bulls\",\n " +
+                "if in different positions,but right digits -  they are \"cows\". LETS GO!" );
 
+        boolean running = true;
+        do {
+            System.out.println("");
+            System.out.println("Enter first digit:");
             var n1 = scanner.nextInt();
+            System.out.println("Enter second digit:");
             var n2 = scanner.nextInt();
+            System.out.println("Enter third digit:");
             var n3 = scanner.nextInt();
+            System.out.println("Enter fourth digit:");
             var n4 = scanner.nextInt();
             var guess ="" + n1 + n2 + n3 + n4 ;
 
