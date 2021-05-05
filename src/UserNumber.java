@@ -34,7 +34,7 @@ public class UserNumber {
     }
 
 
-    public String askUserForGuess() {
+    public void askUserForGuess() {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Try to guess!");
@@ -48,7 +48,6 @@ public class UserNumber {
        setN4(scanner.nextInt());
 
         var userNumbers = List.of(n1,n2,n3,n4);
-        return "You think the number is : "+n1+n2+n3+n4;
-
+        System.out.println("You think number is "+n1+n2+n3+n4);
     }
 }
