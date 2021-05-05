@@ -7,7 +7,7 @@ public class Main {
         var rand = new Random();
         /* To make it not repeat the digits separate times (like computer can generate two times 3 and again 3 )
          we make LinkedHashSet, because it does not allow us to repeat numbers and then on line 18 we put it into simple List
-          so that it would be possible to compare generatedDigits with userDigits after on line 37
+          so that it would be possible to compare generatedDigits with userDigits after on line 38
          */
         var set = new LinkedHashSet<Integer>();
         while (set.size() < 4) {
