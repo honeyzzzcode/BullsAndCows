@@ -24,11 +24,11 @@ public class Main {
                 "If the matching digits are in their right positions, they are \"bulls\",\n " +
                 "if in different positions,but right digits -  they are \"cows\". LETS GO!");
 
-        boolean running = true;
+        boolean userWin = true;
         do {
             userNumber.askUserForGuess();
             var userDigits = List.of(userNumber.getN1(), userNumber.getN2(), userNumber.getN3(), userNumber.getN4());
-            var guess = "" + userNumber.getN1() + userNumber.getN2() + userNumber.getN3() + userNumber.getN4();
+
             int bulls = 0;
             int cows = 0;
             for (int j = 0; j < 4; j++) {
@@ -46,20 +46,17 @@ public class Main {
                 }
             }
             var all = new ALLInformation();
-
-            all.setGuess(guess);
-
             all.setBulls(bulls);
             all.setCows(cows);
             System.out.println("bulls : " + bulls + " and cows: " + cows);
             if (bulls == 4) {
 
                 System.out.println("Congratulations!You won");
-                running = false;
-            } else {
+                userWin = false;
+            }else {
                 System.out.println("Maybe again?");
             }
-        } while (running);
+        } while (userWin);
 
     }
 
