@@ -4,17 +4,17 @@ public class Main {
 
     public static void main(String[] args) {
         UserNumber userNumber = new UserNumber();
-        List<Integer> generatedDigits;
         var rand = new Random();
         /* To make it not repeat the digits separate times (like computer can generate two times 3 and again 3 )
          we make LinkedHashSet, because it does not allow us to repeat numbers and then on line 18 we put it into simple List
-          so that it would be possible to compare generatedDigits with userDigits after on line 38
+          so that it would be possible to compare generatedDigits with userDigits after on line 37
          */
         var set = new LinkedHashSet<Integer>();
         while (set.size() < 4) {
             var n = rand.nextInt(10);
             set.add(n);
         }
+        List<Integer> generatedDigits;
         generatedDigits = List.copyOf(set);
         System.out.println(generatedDigits);
 
