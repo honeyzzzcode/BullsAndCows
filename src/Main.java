@@ -1,8 +1,13 @@
+import javax.swing.*;
+import java.awt.*;
 import java.util.*;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
+        ImageIcon welcomeIcon = new ImageIcon("welcome.jpg");
+        ImageIcon won = new ImageIcon("won.jpg");
         UserNumber userNumber = new UserNumber();
         var rand = new Random();
         /* To make it not repeat the digits separate times (like computer can generate two times 3 and again 3 )
@@ -18,11 +23,16 @@ public class Main {
         generatedDigits = List.copyOf(set);
         System.out.println(generatedDigits);
 
-        System.out.println("Welcome to bulls and cows game ! \n" +
+        JOptionPane.showMessageDialog(null,
+                "Welcome to bulls and cows game ! \n" +
                 " There is  a 4-digit secret number. The digits are all different.\n " +
                 "Then the players try to guess number.\n " +
                 "If the matching digits are in their right positions, they are \"bulls\",\n " +
-                "if in different positions,but right digits -  they are \"cows\". LETS GO!");
+                "if in different positions,but right digits -  they are \"cows\". \nLET'S GO!",
+                "Welcome to the game!",
+                JOptionPane.INFORMATION_MESSAGE,
+                welcomeIcon);
+
 
         boolean userWin = true;
         do {
@@ -48,13 +58,13 @@ public class Main {
             var all = new ALLInformation();
             all.setBulls(bulls);
             all.setCows(cows);
-            System.out.println("bulls : " + bulls + " and cows: " + cows);
+            JOptionPane.showMessageDialog(null, "bulls : " + bulls + " and cows: " + cows);
             if (bulls == 4) {
 
-                System.out.println("Congratulations!You won");
+                JOptionPane.showMessageDialog(null,"Congratulations!You won",null, JOptionPane.ERROR_MESSAGE, won );
                 userWin = false;
             }else {
-                System.out.println("Maybe again?");
+                JOptionPane.showMessageDialog(null, "Maybe again?", null, JOptionPane.ERROR_MESSAGE);
             }
         } while (userWin);
 

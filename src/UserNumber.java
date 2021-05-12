@@ -1,5 +1,8 @@
+import javax.swing.*;
 import java.util.List;
 import java.util.Scanner;
+
+import static java.lang.Integer.parseInt;
 
 public class UserNumber {
 
@@ -36,18 +39,18 @@ public class UserNumber {
 
     public void askUserForGuess() {
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Try to guess!");
-        System.out.println("Enter first digit:");
-        setN1(scanner.nextInt());;
-        System.out.println("Enter second digit:");
-       setN2(scanner.nextInt());
-        System.out.println("Enter third digit:");
-        setN3(scanner.nextInt());
-        System.out.println("Enter fourth digit:");
-       setN4(scanner.nextInt());
+       // Scanner scanner = new Scanner(System.in);
+       //JOptionPane.showMessageDialog(null,"Try to guess!");
+        String n1 = JOptionPane.showInputDialog(null,"Enter first digit:");
+        setN1(parseInt(n1));
+        String n2 = JOptionPane.showInputDialog(null,"Enter second digit:");
+        setN2(parseInt(n2));
+        String n3 = JOptionPane.showInputDialog(null,"Enter third digit:");
+        setN3(parseInt(n3));
+        String n4 = JOptionPane.showInputDialog(null,"Enter fourth digit:");
+        setN4(parseInt(n4));
 
-        var userNumbers = List.of(n1,n2,n3,n4);
-        System.out.println("You think number is "+n1+n2+n3+n4);
+       // var userNumbers = List.of(n1,n2,n3,n4);
+        JOptionPane.showMessageDialog(null,("You think number is "+n1+n2+n3+n4));
     }
 }
