@@ -6,8 +6,9 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        ImageIcon welcomeIcon = new ImageIcon("welcome.jpg");
+
         ImageIcon won = new ImageIcon("won.jpg");
+
         UserNumber userNumber = new UserNumber();
         boolean gameOn = true;
 
@@ -32,7 +33,7 @@ public class Main {
                             "if in different positions,but right digits -  they are \"cows\". \nLET'S GO!",
                     "Welcome to the game!",
                     JOptionPane.INFORMATION_MESSAGE,
-                    welcomeIcon);
+                    new ImageIcon("welcome.jpg") );
 
             for (int attempts = 1; attempts <= 7; attempts++) {
 
@@ -63,21 +64,21 @@ public class Main {
 
                 if (bulls == 4) {
 
-                    JOptionPane.showMessageDialog(null, "Congratulations!You won " + attempts + " attempts were used.", null, JOptionPane.ERROR_MESSAGE, won);
+                    JOptionPane.showMessageDialog(null, "Congratulations!You won " + attempts + " attempts were used.", null, JOptionPane.ERROR_MESSAGE,new ImageIcon("won.jpg") );
                     userWin = false;
                     break;
                 }
             }
 
             if (userWin) {
-                JOptionPane.showMessageDialog(null, "You lost :( Number was " + generatedDigits, null, JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "You lost :( Number was " + generatedDigits, null, JOptionPane.ERROR_MESSAGE,new ImageIcon("bull.png"));
             }
 
             String[] yesOrNo = {"Yes", "No"};
             String userChoice = (String) JOptionPane.showInputDialog(null, "Do you want to play again ?",
                     null,
                     JOptionPane.WARNING_MESSAGE,
-                    null,
+                    new ImageIcon("yesorno.jpeg"),
                     yesOrNo,
                     yesOrNo[0]);
             switch (userChoice) {
