@@ -39,8 +39,7 @@ public class UserNumber {
 
     public void askUserForGuess() {
 
-       // Scanner scanner = new Scanner(System.in);
-       //JOptionPane.showMessageDialog(null,"Try to guess!");
+
         String n1 = JOptionPane.showInputDialog(null,"Enter first digit:");
         setN1(parseInt(n1));
         String n2 = JOptionPane.showInputDialog(null,"Enter second digit:");
@@ -50,7 +49,7 @@ public class UserNumber {
         String n4 = JOptionPane.showInputDialog(null,"Enter fourth digit:");
         setN4(parseInt(n4));
 
-       // var userNumbers = List.of(n1,n2,n3,n4);
+
         JOptionPane.showMessageDialog(null,("You think number is "+n1+n2+n3+n4));
     }
 }
