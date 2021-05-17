@@ -18,8 +18,8 @@ public class Main {
             var rand = new Random();
             var set = new LinkedHashSet<Integer>();
             while (set.size() < 4) {
-                var n = rand.nextInt(10);
-                set.add(n);
+                var n = rand.nextInt(9);
+                set.add(n+1);
             }
             List<Integer> generatedDigits;
             generatedDigits = List.copyOf(set);
@@ -35,7 +35,7 @@ public class Main {
                     JOptionPane.INFORMATION_MESSAGE,
                     new ImageIcon("welcome.jpg") );
 
-            for (int attempts = 1; attempts <= 7; attempts++) {
+            for (int attempts = 1; attempts <= 2; attempts++) {
 
 
                 userNumber.askUserForGuess();

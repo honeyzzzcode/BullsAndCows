@@ -41,6 +41,7 @@ public class UserNumber {
 
 
         String n1 = JOptionPane.showInputDialog(null,"Enter first digit:");
+        setN1(parseInt(n1));
         String n2 = JOptionPane.showInputDialog(null,"Enter second digit:");
         setN2(parseInt(n2));
         String n3 = JOptionPane.showInputDialog(null,"Enter third digit:");
