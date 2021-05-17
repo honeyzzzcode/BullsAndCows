@@ -50,10 +50,10 @@ public class UserNumber {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);
             }
-           // if (!n1.equals("")) {
-              //  JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);
+         //  if (!n1.equals("")) {
+           //    JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);
               //  throw new Exception("You should type a digit");
-         //   }
+        //   }
         } while (getN1() == 0);
 
         setN2(0);
