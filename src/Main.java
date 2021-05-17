@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 import java.util.*;
 import java.util.List;
 
@@ -39,7 +40,11 @@ public class Main {
 
 
                 userNumber.askUserForGuess();
+
                 var userDigits = List.of(userNumber.getN1(), userNumber.getN2(), userNumber.getN3(), userNumber.getN4());
+
+
+
 
                 int bulls = 0;
                 int cows = 0;

@@ -1,7 +1,4 @@
 import javax.swing.*;
-import java.util.List;
-import java.util.Scanner;
-
 import static java.lang.Integer.parseInt;
 
 public class UserNumber {
@@ -33,21 +30,56 @@ public class UserNumber {
         return n1;
     }
     public void setN1(int n1) {
-        this.n1 = n1;
+               this.n1 = n1;
     }
 
 
     public void askUserForGuess() {
+        setN1(0);
 
+       do {
+           String n1 = JOptionPane.showInputDialog(null, "Enter first digit:");
 
-        String n1 = JOptionPane.showInputDialog(null,"Enter first digit:");
-        setN1(parseInt(n1));
+            try {
+                setN1(parseInt(n1));
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);
+            }
+        } while (getN1()==0);
+
+       setN2(0);
+       do {
+
         String n2 = JOptionPane.showInputDialog(null,"Enter second digit:");
+           try {
         setN2(parseInt(n2));
-        String n3 = JOptionPane.showInputDialog(null,"Enter third digit:");
+           } catch (Exception e) {
+               JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);
+           }
+       } while (getN2()==0);
+
+        setN3(0);
+        do {
+
+            String n3 = JOptionPane.showInputDialog(null,"Enter third digit:");
+            try {
         setN3(parseInt(n3));
-        String n4 = JOptionPane.showInputDialog(null,"Enter fourth digit:");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);
+            }
+        } while (getN3()==0);
+
+        setN4(0);
+        do {
+
+            String n4 = JOptionPane.showInputDialog(null,"Enter fourth digit:");
+            try {
         setN4(parseInt(n4));
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);
+            }
+        } while (getN4()==0);
+
 
 
         JOptionPane.showMessageDialog(null,("You think number is "+n1+n2+n3+n4));
