@@ -50,10 +50,10 @@ public class UserNumber {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);
             }
-            if (!n1.equals("")) {
-                JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);
+           // if (!n1.equals("")) {
+              //  JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);
               //  throw new Exception("You should type a digit");
-            }
+         //   }
         } while (getN1() == 0);
 
         setN2(0);
@@ -65,9 +65,10 @@ public class UserNumber {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);
             }
-            if (!n2.equals("")) {
-                JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);}
-        } while (getN2() == 0);
+          //  if (!n2.equals("")) {
+          //      JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);}
+        }
+        while (getN2() == 0);
 
         setN3(0);
         do {
@@ -78,8 +79,8 @@ public class UserNumber {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);
             }
-            if (!n3.equals("")) {
-                JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);}
+          //  if (!n3.equals("")) {
+            //    JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);}
         } while (getN3() == 0);
 
         setN4(0);
@@ -91,8 +92,8 @@ public class UserNumber {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);
             }
-            if (!n4.equals("")) {
-                JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);}
+          //  if (!n4.equals("")) {
+              //  JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);}
         } while (getN4() == 0);
 
 
