@@ -36,7 +36,7 @@ public class Main {
                             "if in different positions,but right digits -  they are \"cows\". \nLET'S GO!",
                     "Welcome to the game!",
                     JOptionPane.INFORMATION_MESSAGE,
-                    new ImageIcon("welcome.jpg") );
+                    new ImageIcon("welcome.jpg"));
             JOptionPane.showInputDialog(null,"Enter your name:");
 
             for (int attempts = 1; attempts <= 2; attempts++) {
