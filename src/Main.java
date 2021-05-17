@@ -7,6 +7,8 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+        User user = new User();
+
 
         ImageIcon won = new ImageIcon("won.jpg");
 
@@ -35,6 +37,7 @@ public class Main {
                     "Welcome to the game!",
                     JOptionPane.INFORMATION_MESSAGE,
                     new ImageIcon("welcome.jpg") );
+            JOptionPane.showInputDialog(null,"Enter your name:");
 
             for (int attempts = 1; attempts <= 2; attempts++) {
 
@@ -97,4 +100,12 @@ public class Main {
             }
         } while (gameOn);
     }
+   /* void addUser() {
+
+        System.out.println("\n Add user");
+        System.out.println("Enter Name:");
+        user.name = scanner.nextLine();
+        System.out.println(message);
+
+    }*/
 }
