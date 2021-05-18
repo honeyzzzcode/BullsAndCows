@@ -1,13 +1,22 @@
+import User.User;
+
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
 
 public class Main {
-
+    private static final DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    private static final ArrayList<User> leaderboard = new ArrayList<>();
+    private static File leaderboardFile = new File("Leaderboard.txt");
     public static void main(String[] args) {
-        User user = new User();
+
 
 
         ImageIcon won = new ImageIcon("won.jpg");
@@ -37,8 +46,8 @@ public class Main {
                     "Welcome to the game!",
                     JOptionPane.INFORMATION_MESSAGE,
                     new ImageIcon("welcome.jpg") );
-            JOptionPane.showInputDialog(null,"Enter your name:");
-
+           String userName = JOptionPane.showInputDialog(null,"Enter your name:");
+            long startTime = System.currentTimeMillis();
             for (int attempts = 1; attempts <= 2; attempts++) {
 
 
@@ -71,6 +80,13 @@ public class Main {
                 JOptionPane.showMessageDialog(null, "bulls : " + bulls + " and cows: " + cows + " \n" + attempts + " of 7 attempts are used.");
 
                 if (bulls == 4) {
+                    long endTime = System.currentTimeMillis();
+                    User user = new User();
+                    user.setUsername(userName);
+                    user.setAttempts(attempts);
+                    user.setDuration(endTime - startTime);
+                    user.setStarttime(startTime);
+leaderboard.add(user);
 
                     JOptionPane.showMessageDialog(null, "Congratulations!You won " + attempts + " attempts were used.", null, JOptionPane.ERROR_MESSAGE,new ImageIcon("won.jpg") );
                     userWin = false;
@@ -99,6 +115,41 @@ public class Main {
 
             }
         } while (gameOn);
+        saveLeaderboard();
+        printleaderboard();
+    }
+    private static void saveLeaderboard() {
+
+        try (var out = new PrintWriter(leaderboardFile)) {
+            for (var gr : leaderboard) {
+                out.printf("%s %d  %d %d \n", gr.getUsername(), gr.getAttempts(), gr.getDuration(), gr.getStarttime());
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("cannot save leaderboard");
+        }
+
+    }
+    private static void printleaderboard() {
+        Date date = new Date();
+        leaderboard.sort(
+                Comparator.comparingInt(User::getAttempts)
+                        .thenComparingLong(User::getDuration)
+        );
+        int maxLen = 0;
+        for (User gr : leaderboard) {
+            var len = gr.getUsername().length();
+            if (maxLen < len) {
+                maxLen = len;
+            }
+        }
+        System.out.printf("NAME  \t     ATTEMPTS \t     DURATION     \t     START TIME\n");
+        var num = Math.min(5, leaderboard.size());
+        var sublist = leaderboard.subList(0, num);
+        for (User gr : sublist) {
+
+            System.out.printf("%1$-" + maxLen + "s      %2$8d   \t      %3$5.1fs         \t %4$tD\t %4$tR%n", gr.getUsername(), gr.getAttempts(), gr.getDuration() / 1000.0, gr.getStarttime(), gr.getStarttime());
+        }
     }
    /* void addUser() {
 
