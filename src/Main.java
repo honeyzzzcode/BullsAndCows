@@ -46,18 +46,11 @@ public class Main {
                     "Welcome to the game!",
                     JOptionPane.INFORMATION_MESSAGE,
                     new ImageIcon("welcome.jpg") );
-           String userName = JOptionPane.showInputDialog(null,"Enter your name:");
+           String userName = String.valueOf(JOptionPane.showInputDialog(null, "Enter your name:", "Player VS PC" , JOptionPane.INFORMATION_MESSAGE, new ImageIcon("player-vs-pc.jpg"), null, ""));
             long startTime = System.currentTimeMillis();
             for (int attempts = 1; attempts <= 2; attempts++) {
-
-
                 userNumber.askUserForGuess();
-
                 var userDigits = List.of(userNumber.getN1(), userNumber.getN2(), userNumber.getN3(), userNumber.getN4());
-
-
-
-
                 int bulls = 0;
                 int cows = 0;
                 for (int j = 0; j < 4; j++) {
@@ -107,7 +100,6 @@ leaderboard.add(user);
                     yesOrNo[0]);
             switch (userChoice) {
                 case "Yes":
-
                     break;
                 case "No":
                     gameOn = false;
@@ -151,12 +143,4 @@ leaderboard.add(user);
             System.out.printf("%1$-" + maxLen + "s      %2$8d   \t      %3$5.1fs         \t %4$tD\t %4$tR%n", gr.getUsername(), gr.getAttempts(), gr.getDuration() / 1000.0, gr.getStarttime(), gr.getStarttime());
         }
     }
-   /* void addUser() {
-
-        System.out.println("\n Add user");
-        System.out.println("Enter Name:");
-        user.name = scanner.nextLine();
-        System.out.println(message);
-
-    }*/
 }
