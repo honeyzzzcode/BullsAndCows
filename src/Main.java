@@ -81,7 +81,7 @@ public class Main {
                     user.setStarttime(startTime);
 leaderboard.add(user);
 
-                    JOptionPane.showMessageDialog(null, "Congratulations!You won " + attempts + " attempts were used.", null, JOptionPane.ERROR_MESSAGE,new ImageIcon("won.jpg") );
+                    JOptionPane.showMessageDialog(null, "Congratulations!You won " + attempts + " attempts were used.", null, JOptionPane.ERROR_MESSAGE,new ImageIcon("won.jpg"));
                     userWin = false;
                     break;
                 }

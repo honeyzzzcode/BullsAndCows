@@ -44,7 +44,7 @@ public class UserNumber {
 
         setN1(0);
         do {
-            String n1 = JOptionPane.showInputDialog(null, "Enter first digit:");
+            String n1 = String.valueOf(JOptionPane.showInputDialog(null, "Enter first digit:","" , JOptionPane.INFORMATION_MESSAGE, new ImageIcon("question_mark.gif"), null, ""));
             try {
                 setN1(parseInt(n1));
             } catch (Exception e) {
@@ -55,7 +55,7 @@ public class UserNumber {
         setN2(0);
         do {
 
-            String n2 = JOptionPane.showInputDialog(null, "Enter second digit:");
+            String n2 =  String.valueOf(JOptionPane.showInputDialog(null, "Enter second digit:", "" , JOptionPane.INFORMATION_MESSAGE, new ImageIcon("question_mark.gif"), null, ""));
             try {
                 setN2(parseInt(n2));
             } catch (Exception e) {
@@ -67,7 +67,8 @@ public class UserNumber {
         setN3(0);
         do {
 
-            String n3 = JOptionPane.showInputDialog(null, "Enter third digit:");
+            String n3 = String.valueOf(JOptionPane.showInputDialog(null, "Enter third digit:", "" , JOptionPane.INFORMATION_MESSAGE, new ImageIcon("question_mark.gif"), null, ""));
+
             try {
                 setN3(parseInt(n3));
             } catch (Exception e) {
@@ -78,7 +79,8 @@ public class UserNumber {
         setN4(0);
         do {
 
-            String n4 = JOptionPane.showInputDialog(null, "Enter fourth digit:");
+            String n4 = String.valueOf(JOptionPane.showInputDialog(null, "Enter fourth digit:", "" , JOptionPane.INFORMATION_MESSAGE, new ImageIcon("question_mark.gif"), null, ""));
+
             try {
                 setN4(parseInt(n4));
             } catch (Exception e) {
