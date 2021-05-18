@@ -81,14 +81,14 @@ public class Main {
                     user.setStarttime(startTime);
 leaderboard.add(user);
 
-                    JOptionPane.showMessageDialog(null, "Congratulations!You won " + attempts + " attempts were used.", null, JOptionPane.ERROR_MESSAGE,new ImageIcon("won.jpg"));
+                    JOptionPane.showMessageDialog(null, "Congratulations!\nYou won! \n" + attempts + " attempt(s) were used.", null, JOptionPane.ERROR_MESSAGE,new ImageIcon("won.jpg"));
                     userWin = false;
                     break;
                 }
             }
 
             if (userWin) {
-                JOptionPane.showMessageDialog(null, "You lost :( Number was " + generatedDigits, null, JOptionPane.ERROR_MESSAGE,new ImageIcon("bull.png"));
+                JOptionPane.showMessageDialog(null, "You lost :( \nNumber was " + generatedDigits, null, JOptionPane.ERROR_MESSAGE,new ImageIcon("bull.png"));
             }
 
             String[] yesOrNo = {"Yes", "No"};
