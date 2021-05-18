@@ -7,6 +7,14 @@ public class UserNumber {
     private int n3;
     private int n4;
 
+    public int getN1() {
+        return n1;
+    }
+
+    public void setN1(int n1) {
+        this.n1 = n1;
+    }
+
     public int getN2() {
         return n2;
     }
@@ -31,15 +39,6 @@ public class UserNumber {
         this.n4 = n4;
     }
 
-    public int getN1() {
-        return n1;
-    }
-
-    public void setN1(int n1) {
-        this.n1 = n1;
-    }
-
-
     public void askUserForGuess() {
 
         setN1(0);
@@ -48,48 +47,35 @@ public class UserNumber {
             try {
                 setN1(parseInt(n1));
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);
-            }
-                 } while (getN1() == 0);
+                JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);}
+            } while (getN1() == 0);
 
         setN2(0);
         do {
-
             String n2 =  String.valueOf(JOptionPane.showInputDialog(null, "Enter second digit:", "" , JOptionPane.INFORMATION_MESSAGE, new ImageIcon("question_mark.gif"), null, ""));
             try {
                 setN2(parseInt(n2));
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);
-            }
-                 }
-        while (getN2() == 0);
+                JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);}
+             } while (getN2() == 0);
 
         setN3(0);
         do {
-
             String n3 = String.valueOf(JOptionPane.showInputDialog(null, "Enter third digit:", "" , JOptionPane.INFORMATION_MESSAGE, new ImageIcon("question_mark.gif"), null, ""));
-
             try {
                 setN3(parseInt(n3));
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);
-            }
-                  } while (getN3() == 0);
+                JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);}
+            } while (getN3() == 0);
 
         setN4(0);
         do {
-
             String n4 = String.valueOf(JOptionPane.showInputDialog(null, "Enter fourth digit:", "" , JOptionPane.INFORMATION_MESSAGE, new ImageIcon("question_mark.gif"), null, ""));
-
             try {
                 setN4(parseInt(n4));
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);
-            }
-
-        } while (getN4() == 0);
-
-
+                JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);}
+            } while (getN4() == 0);
         JOptionPane.showMessageDialog(null, ("You think number is " + n1 + n2 + n3 + n4));
     }
 }

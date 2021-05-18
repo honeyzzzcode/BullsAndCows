@@ -1,10 +1,7 @@
 import User.User;
-
 import javax.swing.*;
-import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -15,17 +12,11 @@ public class Main {
     private static final DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     private static final ArrayList<User> leaderboard = new ArrayList<>();
     private static File leaderboardFile = new File("Leaderboard.txt");
+
     public static void main(String[] args) {
-
-
-
-        ImageIcon won = new ImageIcon("won.jpg");
-
-        UserNumber userNumber = new UserNumber();
+      UserNumber userNumber = new UserNumber();
         boolean gameOn = true;
-
         do {
-
             boolean userWin = true;
             var rand = new Random();
             var set = new LinkedHashSet<Integer>();
@@ -38,11 +29,11 @@ public class Main {
             System.out.println(generatedDigits);
 
             JOptionPane.showMessageDialog(null,
-                    "Welcome to bulls and cows game ! \n" +
+                    "Welcome to bulls and cows game ! \n\n" +
                             " There is  a 4-digit secret number. The digits are all different.\n " +
                             "Then the players try to guess number.\n " +
                             "If the matching digits are in their right positions, they are \"bulls\",\n " +
-                            "if in different positions,but right digits -  they are \"cows\". \nLET'S GO!",
+                            "if in different positions,but right digits -  they are \"cows\". \n\nLET'S GO!",
                     "Welcome to the game!",
                     JOptionPane.INFORMATION_MESSAGE,
                     new ImageIcon("welcome.jpg") );
@@ -63,7 +54,6 @@ public class Main {
                             } else {
                                 cows++;
                             }
-
                         }
                     }
                 }
@@ -79,18 +69,15 @@ public class Main {
                     user.setAttempts(attempts);
                     user.setDuration(endTime - startTime);
                     user.setStarttime(startTime);
-leaderboard.add(user);
-
+                    leaderboard.add(user);
                     JOptionPane.showMessageDialog(null, "Congratulations!\nYou won! \n" + attempts + " attempt(s) were used.", null, JOptionPane.ERROR_MESSAGE,new ImageIcon("won.jpg"));
                     userWin = false;
                     break;
                 }
             }
-
             if (userWin) {
                 JOptionPane.showMessageDialog(null, "You lost :( \nNumber was " + generatedDigits, null, JOptionPane.ERROR_MESSAGE,new ImageIcon("bull.png"));
             }
-
             String[] yesOrNo = {"Yes", "No"};
             String userChoice = (String) JOptionPane.showInputDialog(null, "Do you want to play again ?",
                     null,
@@ -104,7 +91,6 @@ leaderboard.add(user);
                 case "No":
                     gameOn = false;
                     break;
-
             }
         } while (gameOn);
         saveLeaderboard();
@@ -120,14 +106,11 @@ leaderboard.add(user);
         } catch (FileNotFoundException e) {
             System.out.println("cannot save leaderboard");
         }
-
     }
     private static void printleaderboard() {
         Date date = new Date();
-        leaderboard.sort(
-                Comparator.comparingInt(User::getAttempts)
-                        .thenComparingLong(User::getDuration)
-        );
+        leaderboard.sort(Comparator.comparingInt(User::getAttempts)
+                        .thenComparingLong(User::getDuration));
         int maxLen = 0;
         for (User gr : leaderboard) {
             var len = gr.getUsername().length();
@@ -139,8 +122,7 @@ leaderboard.add(user);
         var num = Math.min(5, leaderboard.size());
         var sublist = leaderboard.subList(0, num);
         for (User gr : sublist) {
-
-            System.out.printf("%1$-" + maxLen + "s      %2$8d   \t      %3$5.1fs         \t %4$tD\t %4$tR%n", gr.getUsername(), gr.getAttempts(), gr.getDuration() / 1000.0, gr.getStarttime(), gr.getStarttime());
+        System.out.printf("%1$-" + maxLen + "s      %2$8d   \t      %3$5.1fs         \t %4$tD\t %4$tR%n", gr.getUsername(), gr.getAttempts(), gr.getDuration() / 1000.0, gr.getStarttime(), gr.getStarttime());
         }
     }
 }
