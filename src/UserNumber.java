@@ -45,15 +45,21 @@ public class UserNumber {
         do {
             String n1 = String.valueOf(JOptionPane.showInputDialog(null, "Enter first digit:","" , JOptionPane.INFORMATION_MESSAGE, new ImageIcon("question_mark.gif"), null, ""));
             try {
-                setN1(parseInt(n1));
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);}
-            } while (getN1() == 0);
+             if ( n1.length()>1){
+                throw new Exception("You should type one digit");
+                }
+            setN1(parseInt(n1));}
+            catch (Exception e){
+             JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);}
+             } while (getN1()==0);
 
         setN2(0);
         do {
             String n2 =  String.valueOf(JOptionPane.showInputDialog(null, "Enter second digit:", "" , JOptionPane.INFORMATION_MESSAGE, new ImageIcon("question_mark.gif"), null, ""));
             try {
+                if ( n2.length()>1){
+                    throw new Exception("You should type one digit");
+                }
                 setN2(parseInt(n2));
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);}
@@ -63,6 +69,9 @@ public class UserNumber {
         do {
             String n3 = String.valueOf(JOptionPane.showInputDialog(null, "Enter third digit:", "" , JOptionPane.INFORMATION_MESSAGE, new ImageIcon("question_mark.gif"), null, ""));
             try {
+                if ( n3.length()>1){
+                    throw new Exception("You should type one digit");
+                }
                 setN3(parseInt(n3));
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);}
@@ -72,6 +81,9 @@ public class UserNumber {
         do {
             String n4 = String.valueOf(JOptionPane.showInputDialog(null, "Enter fourth digit:", "" , JOptionPane.INFORMATION_MESSAGE, new ImageIcon("question_mark.gif"), null, ""));
             try {
+                if ( n4.length()>1){
+                    throw new Exception("You should type one digit");
+                }
                 setN4(parseInt(n4));
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "You should type a digit", null, JOptionPane.ERROR_MESSAGE);}
