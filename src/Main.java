@@ -14,6 +14,7 @@ public class Main {
     private static File leaderboardFile = new File("Leaderboard.txt");
 
     public static void main(String[] args) {
+        loadLeaderboard();
       UserNumber userNumber = new UserNumber();
         boolean gameOn = true;
         do {
@@ -125,4 +126,19 @@ public class Main {
         System.out.printf("%1$-" + maxLen + "s      %2$8d   \t      %3$5.1fs         \t %4$tD\t %4$tR%n", gr.getUsername(), gr.getAttempts(), gr.getDuration() / 1000.0, gr.getStarttime(), gr.getStarttime());
         }
     }
+    private static void loadLeaderboard() {
+        try (var in = new Scanner(leaderboardFile)) {
+            while ((in.hasNext())) {
+                var user = new User();
+                user.setUsername(in.next());
+                user.setAttempts(in.nextInt());
+                user.setDuration(in.nextLong());
+                user.setStarttime(in.nextLong());
+                leaderboard.add(user);
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("cannot read leaderboard");
+        }
+    }
+
 }
